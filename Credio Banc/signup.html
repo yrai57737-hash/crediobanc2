@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Credio Banc</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">Credio Banc</a></div>
+            <ul class="nav-links">
+                <li><a href="login.html" class="btn btn-outline">Login</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-container">
+            <div class="auth-card">
+                <h2>Create Your Account</h2>
+                <form id="signup-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" minlength="3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <small>This will be used as your login ID</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{8,15}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="IN">India</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="GH">Ghana</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="KE">Kenya</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePicture">Profile Picture (Optional)</label>
+                        <input type="file" id="profilePicture" name="profilePicture" accept=".jpg,.jpeg,.png">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a password" pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$" required>
+                        <small>Minimum 8 characters, at least 1 uppercase letter, 1 number, and 1 special character</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+                <div id="message" class="message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Credio Banc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/signup.js"></script>
+    <script src="js/navbar.js"></script>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'f197e108ea6f382be86c5d9ff8563ed25da87a63';
+window.smartsupp||(function(d) {
+var s,c,o=smartsupp=function(){ o._.push(arguments)}; o._=[];
+s=d.getElementsByTagName('script')[0];
+c=d.createElement('script');
+c.type='text/javascript';
+c.charset='utf-8';
+c.async=true;
+c.src='https://www.smartsuppchat.com/loader.js?';
+s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+</body>
+</html> 

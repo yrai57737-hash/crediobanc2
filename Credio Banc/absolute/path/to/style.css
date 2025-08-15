@@ -1,0 +1,42 @@
+/* Remove gradient from hero section */
+.hero {
+    background: white;
+    color: var(--dark-color);
+    padding: 120px 0 80px;
+}
+
+/* Modern typography */
+.hero h1 {
+    font-size: 3.5em;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+    text-shadow: none;
+}
+
+/* Clean button styles */
+.btn-primary {
+    background-color: var(--dark-color);
+    color: white;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: 500;
+}
+
+/* Modern card styling */
+.service-cards .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Overall clean background */
+body {
+    background: white;
+}
+
+/* Modern navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}

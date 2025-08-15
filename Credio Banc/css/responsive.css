@@ -1,0 +1,114 @@
+/* Responsive Styles */
+
+/* Tablets and smaller */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        margin: 20px 0;
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .nav-active {
+        transform: translateX(0%);
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .auth-card {
+        padding: 20px;
+    }
+    
+    .balance-amount {
+        font-size: 2rem;
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-form input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .search-form button {
+        border-radius: 5px;
+    }
+    
+    .nav-links {
+        width: 70%;
+    }
+}
+
+/* Animation for nav links */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Nav active class */
+.nav-active {
+    transform: translateX(0%);
+}
+
+/* Toggle for burger menu */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}

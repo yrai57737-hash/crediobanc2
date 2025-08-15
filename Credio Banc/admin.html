@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Credio Banc</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="admin.html">Credio Banc Admin</a></div>
+            <ul class="nav-links">
+                <li><a href="admin.html" class="active">Dashboard</a></li>
+                <li><a href="#" class="logout-btn">Logout</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="admin-container">
+            <div class="container">
+                <div class="admin-header">
+                    <h1>Welcome, <span id="admin-name">Admin</span></h1>
+                    <h2>User Management</h2>
+                </div>
+
+                <!-- Search Form -->
+                <div class="admin-card">
+                    <h3>Find User by ID</h3>
+                    <form id="search-user-form">
+                        <div class="form-group">
+                            <label for="search-userId">User ID</label>
+                            <input type="text" id="search-userId" name="userId" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+
+                <!-- User Details -->
+                <div id="user-details-card" class="admin-card" style="display: none; margin-top: 20px;">
+                    <h3>User Details</h3>
+                    <div id="user-info">
+                        <p><strong>Name:</strong> <span id="user-name"></span></p>
+                        <p><strong>User ID:</strong> <span id="user-id-display"></span></p>
+                        <p><strong>Current Balance:</strong> $<span id="user-balance"></span></p>
+                    </div>
+                    <button id="show-fund-modal-btn" class="btn btn-success">Fund User</button>
+                </div>
+
+                <!-- Funding Modal -->
+                <div id="fund-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h3>Fund User Account</h3>
+                        <form id="fund-account-form">
+                            <input type="hidden" id="fund-userId" name="userId">
+                            <div class="form-group">
+                                <label for="fund-amount">Amount</label>
+                                <input type="number" id="fund-amount" name="amount" min="0.01" step="0.01" required placeholder="Enter amount">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Fund</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Message Area -->
+                <div id="admin-message" class="message" style="margin-top: 20px;"></div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Credio Banc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/admin.js?v=1.1"></script>
+    <script src="js/logout.js?v=1.1"></script>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = 'f197e108ea6f382be86c5d9ff8563ed25da87a63';
+    window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)}; o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+</script>
+<noscript>
+    Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a>
+</noscript>
+</body>
+</html>

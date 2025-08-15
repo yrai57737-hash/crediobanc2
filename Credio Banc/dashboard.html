@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Credio Banc</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><a href="dashboard.html">Credio Banc</a></div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html" class="active">Home</a></li>
+
+                <li><a href="#" class="logout-btn">Logout</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <div class="container">
+                <div class="dashboard-header">
+                    <div class="user-info">
+                        <h2>Welcome, <span id="user-name">User</span></h2>
+                    </div>
+                </div>
+                
+                <div class="balance-card">
+                    <h3>Current Balance</h3>
+                    <div class="balance-amount" id="balance">$0.00</div>
+                    <div class="user-id">User ID: <span id="user-id">--</span></div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <!-- Withdrawal Form -->
+                    <div class="action-card">
+                        <h3>Withdraw Funds</h3>
+                        <form id="withdrawal-form">
+                            <div class="form-group">
+                                <label for="withdraw-amount">Amount</label>
+                                <input type="number" id="withdraw-amount" name="amount" min="0.01" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="withdraw-account-type">Account Type</label>
+                                <select id="withdraw-account-type" name="accountType" required>
+                                    <option value="checking">Checking</option>
+                                    <option value="savings">Savings</option>
+                                    <option value="investment">Investment</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="withdraw-payment-method">Payment Method</label>
+                                <select id="withdraw-payment-method" name="paymentMethod" required>
+                                    <option value="wire">Wire Transfer</option>
+                                    <option value="ach">ACH</option>
+                                    <option value="sepa">SEPA</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="withdraw-bank-name">Bank Name</label>
+                                <input type="text" id="withdraw-bank-name" name="bankName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="withdraw-account-name">Account Name</label>
+                                <input type="text" id="withdraw-account-name" name="accountName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="withdraw-account-number">Account Number</label>
+                                <input type="text" id="withdraw-account-number" name="accountNumber" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Withdraw</button>
+                        </form>
+                    </div>
+
+                    <!-- Transfer Form -->
+                    <div class="action-card">
+                        <h3>Transfer Funds</h3>
+                        <form id="transfer-form">
+                            <div class="form-group">
+                                <label for="transfer-amount">Amount</label>
+                                <input type="number" id="transfer-amount" name="amount" min="0.01" step="0.01" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="transfer-account-type">Account Type</label>
+                                <select id="transfer-account-type" name="accountType" required>
+                                    <option value="checking">Checking</option>
+                                    <option value="savings">Savings</option>
+                                    <option value="investment">Investment</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="transfer-payment-method">Payment Method</label>
+                                <select id="transfer-payment-method" name="paymentMethod" required>
+                                    <option value="wire">Wire Transfer</option>
+                                    <option value="ach">ACH</option>
+                                    <option value="sepa">SEPA</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="transfer-bank-name">Recipient's Bank Name</label>
+                                <input type="text" id="transfer-bank-name" name="bankName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="transfer-account-name">Recipient's Account Name</label>
+                                <input type="text" id="transfer-account-name" name="accountName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="transfer-account-number">Recipient's Account Number</label>
+                                <input type="text" id="transfer-account-number" name="accountNumber" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Transfer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verification Modals -->
+        <div id="verification-modal" class="modal-overlay">
+            <div class="modal-content">
+                <h3 id="modal-title">Verification Required</h3>
+                <p id="modal-message">Please enter the code to proceed.</p>
+                <form id="verification-form">
+                    <div class="form-group">
+                        <label for="verification-code" id="modal-label">IMF Code</label>
+                        <input type="text" id="verification-code" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" id="cancel-verification" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Message/Status Display -->
+        <div id="status-message" class="message" style="display: none; margin-top: 20px;"></div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Credio Banc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/dashboard.js"></script>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = 'f197e108ea6f382be86c5d9ff8563ed25da87a63';
+    window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)}; o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+</script>
+<noscript>
+    Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a>
+</noscript>
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'f197e108ea6f382be86c5d9ff8563ed25da87a63';
+window.smartsupp||(function(d) {
+var s,c,o=smartsupp=function(){ o._.push(arguments)}; o._=[];
+s=d.getElementsByTagName('script')[0];
+c=d.createElement('script');
+c.type='text/javascript';
+c.charset='utf-8';
+c.async=true;
+c.src='https://www.smartsuppchat.com/loader.js?';
+s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+</body>
+</html>
